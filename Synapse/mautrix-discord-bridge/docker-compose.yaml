@@ -27,7 +27,7 @@ services:
       mautrix-discord:
 
   mautrix-discord-db:
-    image: docker.io/postgres:15-alpine
+    image: docker.io/postgres:16-alpine
     container_name: mautrix-discord-db
     restart: always
     environment:
