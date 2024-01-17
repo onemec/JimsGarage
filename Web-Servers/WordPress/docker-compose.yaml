@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   wp:
@@ -63,11 +63,12 @@ services:
     image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
     ports:
       - ${IP}:3306:3306 # change ip if required
-    command: [
-        '--default_authentication_plugin=mysql_native_password',
-        '--character-set-server=utf8mb4',
-        '--collation-server=utf8mb4_unicode_ci'
-    ]
+    command:
+      [
+        "--default_authentication_plugin=mysql_native_password",
+        "--character-set-server=utf8mb4",
+        "--collation-server=utf8mb4_unicode_ci",
+      ]
     volumes:
       - /home/ubuntu/docker/wordpress/wp-data:/docker-entrypoint-initdb.d
       - /home/ubuntu/docker/wordpress/db_data:/var/lib/mysql

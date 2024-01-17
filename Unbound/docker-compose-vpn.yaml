@@ -1,10 +1,10 @@
-version: '3'
+version: "3"
 
 networks:
   dns_net:
     driver: bridge
     ipam:
-        config:
+      config:
         - subnet: 172.23.0.0/16
   proxy:
     external: true
@@ -51,17 +51,17 @@ services:
         ipv4_address: 172.23.0.7
       proxy:
     ports:
-    - "53:53/tcp"
-    - "53:53/udp"
-    - "85:80/tcp"
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "85:80/tcp"
     #- "443:443/tcp"
     environment:
-    - TZ: 'Europe/London'
-    - WEBPASSWORD: 'password'
-    - PIHOLE_DNS_: '172.23.0.8#5053'
+      - TZ: "Europe/London"
+      - WEBPASSWORD: "password"
+      - PIHOLE_DNS_: "172.23.0.8#5053"
     volumes:
-    - '/home/ubuntu/docker/pihole/etc-pihole/:/etc/pihole/'
-    - '/home/ubuntu/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - "/home/ubuntu/docker/pihole/etc-pihole/:/etc/pihole/"
+      - "/home/ubuntu/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/"
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -83,8 +83,8 @@ services:
         ipv4_address: 172.23.0.8
         network_mode: "service:gluetun"
     volumes:
-    - /home/ubuntu/docker/unbound:/opt/unbound/etc/unbound
+      - /home/ubuntu/docker/unbound:/opt/unbound/etc/unbound
     ports:
-    - "5053:53/tcp"
-    - "5053:53/udp"
+      - "5053:53/tcp"
+      - "5053:53/udp"
     restart: unless-stopped

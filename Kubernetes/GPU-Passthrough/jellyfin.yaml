@@ -22,26 +22,26 @@ spec:
       nodeSelector:
         worker: "true"
       containers:
-      - image: jellyfin/jellyfin
-        imagePullPolicy: Always
-        name: jellyfin
-        resources:
-          limits:
-            gpu.intel.com/i915: "1" # requesting 1 GPU
-        ports:
-        - containerPort: 8096
-          name: web
-          protocol: TCP
-        env:
-        - name: TZ
-          value: Europe/London
-        volumeMounts:
-        - mountPath: /config
+        - image: jellyfin/jellyfin
+          imagePullPolicy: Always
           name: jellyfin
-          subPath: config
-        - mountPath: /cache
-          name: jellyfin
-          subPath: cache
+          resources:
+            limits:
+              gpu.intel.com/i915: "1" # requesting 1 GPU
+          ports:
+            - containerPort: 8096
+              name: web
+              protocol: TCP
+          env:
+            - name: TZ
+              value: Europe/London
+          volumeMounts:
+            - mountPath: /config
+              name: jellyfin
+              subPath: config
+            - mountPath: /cache
+              name: jellyfin
+              subPath: cache
       volumes:
         - name: jellyfin
           persistentVolumeClaim:
@@ -53,16 +53,16 @@ metadata:
   labels:
     app: jellyfin
   name: jellyfin
-  namespace: jellyfin 
+  namespace: jellyfin
 spec:
   ports:
-  - name: web-tcp
-    port: 8096
-    protocol: TCP
-    targetPort: 8096
-  - name: web-udp
-    port: 8096
-    protocol: UDP
-    targetPort: 8096
+    - name: web-tcp
+      port: 8096
+      protocol: TCP
+      targetPort: 8096
+    - name: web-udp
+      port: 8096
+      protocol: UDP
+      targetPort: 8096
   selector:
     app: jellyfin

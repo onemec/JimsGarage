@@ -48,10 +48,10 @@ metadata:
   namespace: minecraft
 spec:
   ports:
-  - name: minecraft-tcp
-    port: 25565
-    protocol: TCP
-    targetPort: 25565
+    - name: minecraft-tcp
+      port: 25565
+      protocol: TCP
+      targetPort: 25565
   selector:
     app: minecraft
   externalTrafficPolicy: Local

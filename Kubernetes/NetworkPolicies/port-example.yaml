@@ -17,4 +17,3 @@ spec:
         - protocol: TCP
           port: 32000
           endPort: 32768
-

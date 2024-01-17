@@ -21,12 +21,12 @@ spec:
     spec:
       nodeSelector:
         worker: "true"
-     # securityContext:
-     #   sysctls:
-     #   - name: net.ipv4.ip_forward
-     #     value: "1"
-     #   - name: net.ipv4.conf.all.src_valid_mark
-     #     value: "1"
+      # securityContext:
+      #   sysctls:
+      #   - name: net.ipv4.ip_forward
+      #     value: "1"
+      #   - name: net.ipv4.conf.all.src_valid_mark
+      #     value: "1"
       containers:
         - env:
             - name: WG_HOST
@@ -65,10 +65,10 @@ metadata:
   namespace: wg-easy
 spec:
   ports:
-  - name: wg-easy-udp
-    port: 51820
-    protocol: UDP
-    targetPort: 51820
+    - name: wg-easy-udp
+      port: 51820
+      protocol: UDP
+      targetPort: 51820
   selector:
     app: wg-easy
   type: ClusterIP
@@ -82,10 +82,10 @@ metadata:
   namespace: wg-easy
 spec:
   ports:
-  - name: wg-easy-web
-    port: 51821
-    protocol: TCP
-    targetPort: 51821
+    - name: wg-easy-web
+      port: 51821
+      protocol: TCP
+      targetPort: 51821
   selector:
     app: wg-easy
   type: ClusterIP

@@ -6,7 +6,7 @@ services:
     image: dock.mau.dev/mautrix/discord:latest
     restart: unless-stopped
     volumes:
-    - /home/ubuntu/docker/mautrix-discord:/data
+      - /home/ubuntu/docker/mautrix-discord:/data
 
     # If you put the service above in the same docker-compose as the homeserver,
     # ignore the parts below. Otherwise, see below for configuring networking.
@@ -48,4 +48,3 @@ services:
 
 networks:
   mautrix-discord:
-

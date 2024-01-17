@@ -15,8 +15,8 @@ services:
       - MONGO_DBNAME=unifi
       - MEM_LIMIT=1024 #optional
       - MEM_STARTUP=1024 #optional
-   #   - MONGO_TLS= #optional
-   #   - MONGO_AUTHSOURCE= #optional
+    #   - MONGO_TLS= #optional
+    #   - MONGO_AUTHSOURCE= #optional
     volumes:
       - /home/ubuntu/docker/unifi-controller:/config
     ports:
@@ -32,11 +32,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.unifi.entrypoints=http"
-      - "traefik.http.routers.unifi.rule=Host(`unifi.jimsgarage.co.uk`)"
+      - "traefik.http.routers.unifi.rule=Host(`unifi.l0t.us`)"
       - "traefik.http.middlewares.unifi-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.unifi.middlewares=unifi-https-redirect"
       - "traefik.http.routers.unifi-secure.entrypoints=https"
-      - "traefik.http.routers.unifi-secure.rule=Host(`unifi.jimsgarage.co.uk`)"
+      - "traefik.http.routers.unifi-secure.rule=Host(`unifi.l0t.us`)"
       - "traefik.http.routers.unifi-secure.tls=true"
       - "traefik.http.routers.unifi-secure.service=unifi"
       - "traefik.http.services.unifi.loadbalancer.server.port=8443"

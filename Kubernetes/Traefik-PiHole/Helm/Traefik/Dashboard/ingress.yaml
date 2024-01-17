@@ -3,13 +3,13 @@ kind: IngressRoute
 metadata:
   name: traefik-dashboard
   namespace: traefik
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik2.jimsgarage.co.uk`) # change this to your domain
+    - match: Host(`traefik2.l0t.us`) # change this to your domain
       kind: Rule
       middlewares:
         - name: traefik-dashboard-basicauth

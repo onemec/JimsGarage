@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   postgresql:
     image: postgres:16
@@ -7,7 +7,7 @@ services:
       - POSTGRES_DB=keycloak
       - POSTGRES_PASSWORD=SUPERsecret
     volumes:
-      - '/home/ubuntu/docker/keycloak/postgresql_data:/var/lib/postgresql/data'
+      - "/home/ubuntu/docker/keycloak/postgresql_data:/var/lib/postgresql/data"
     networks:
       keycloak:
 
@@ -20,7 +20,7 @@ services:
     environment:
       - KC_PROXY_ADDRESS_FORWARDING=true
       - KC_HOSTNAME_STRICT=false
-      - KC_HOSTNAME=keycloak.jimsgarage.co.uk
+      - KC_HOSTNAME=keycloak.l0t.us
       - KC_PROXY=edge
       - KC_HTTP_ENABLED=true
       - DB=keycloak

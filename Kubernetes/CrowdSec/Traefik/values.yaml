@@ -19,7 +19,7 @@ deployment:
   additionalContainers: []
   initContainers: []
 
-nodeSelector: 
+nodeSelector:
   worker: "true"
 
 ports:
@@ -30,7 +30,7 @@ ports:
   websecure:
     tls:
       enabled: true
-      
+
 ingressRoute:
   dashboard:
     enabled: false

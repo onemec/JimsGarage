@@ -1,4 +1,4 @@
-nodeSelector: 
+nodeSelector:
   worker: "true"
 
 service:

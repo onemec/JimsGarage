@@ -9,7 +9,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: "*.jimsgarage.co.uk" # change to your domain
+  commonName: "*.l0t.us" # change to your domain
   dnsNames:
-  - "*.jimsgarage.co.uk" # change to your domain
-  - jimsgarage.co.uk # change to your domain
+    - "*.l0t.us" # change to your domain
+    - l0t.us # change to your domain

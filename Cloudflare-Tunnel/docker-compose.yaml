@@ -9,7 +9,7 @@ services:
       - TUNNEL_TOKEN=YOUR_KEY_HERE
     networks:
       macvlan4: # change name to whatever you like
-         ipv4_address: 192.168.4.20 # change to your IP in your vLAN subnet
+        ipv4_address: 192.168.4.20 # change to your IP in your vLAN subnet
 
 networks:
   macvlan4:

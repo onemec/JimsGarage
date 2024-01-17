@@ -23,14 +23,14 @@ listeners:
       - names: [client, federation]
         compress: false
 database:
- name: psycopg2
- args:
-   user: synapse_user
-   password: xF2oDmvPLXhN8yivmI7PhPLozBl0ZgfQsjnd55yH
-   database: synapse
-   host: synapse-db
-   cp_min: 5
-   cp_max: 10
+  name: psycopg2
+  args:
+    user: synapse_user
+    password: xF2oDmvPLXhN8yivmI7PhPLozBl0ZgfQsjnd55yH
+    database: synapse
+    host: synapse-db
+    cp_min: 5
+    cp_max: 10
 log_config: "/data/matrix.yourdomain.com.log.config"
 media_store_path: /data/media_store
 registration_shared_secret: "YRGKetN~MIoXWrqJGTkLaY2.3n0#UDClRF1oteAEk7mWq=1f95" # DO NOT USE THIS
@@ -105,6 +105,4 @@ user_directory.search_all_users: true
 matrix_synapse_allow_public_rooms_over_federation: true
 # enable federation on port 443
 serve_server_wellknown: true
-
-
 # vim:ft=yaml

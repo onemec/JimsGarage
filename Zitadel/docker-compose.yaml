@@ -13,7 +13,7 @@ services:
       certs:
         condition: "service_completed_successfully"
     environment:
-      ZITADEL_FIRSTINSTANCE_ORG_HUMAN_USERNAME: Admin1!@zitadel.jimsgarage.co.uk
+      ZITADEL_FIRSTINSTANCE_ORG_HUMAN_USERNAME: Admin1!@zitadel.l0t.us
       ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORD: Password1!
     ports:
       - "8080:8080"
@@ -25,11 +25,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.zitadel.entrypoints=http"
-      - "traefik.http.routers.zitadel.rule=Host(`zitadel.jimsgarage.co.uk`)"
+      - "traefik.http.routers.zitadel.rule=Host(`zitadel.l0t.us`)"
       - "traefik.http.middlewares.zitadel-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.zitadel.middlewares=zitadel-https-redirect"
       - "traefik.http.routers.zitadel-secure.entrypoints=https"
-      - "traefik.http.routers.zitadel-secure.rule=Host(`zitadel.jimsgarage.co.uk`)"
+      - "traefik.http.routers.zitadel-secure.rule=Host(`zitadel.l0t.us`)"
       - "traefik.http.routers.zitadel-secure.tls=true"
       - "traefik.http.routers.zitadel-secure.service=zitadel"
       - "traefik.http.services.zitadel.loadbalancer.server.scheme=h2c"

@@ -4,18 +4,18 @@ kind: IngressRoute
 metadata:
   name: pihole
   namespace: pihole
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`www.pihole3.jimsgarage.co.uk`) # change to your domain
+    - match: Host(`www.pihole3.l0t.us`) # change to your domain
       kind: Rule
       services:
         - name: pihole
           port: 80
-    - match: Host(`pihole3.jimsgarage.co.uk`) # change to your domain
+    - match: Host(`pihole3.l0t.us`) # change to your domain
       kind: Rule
       services:
         - name: pihole

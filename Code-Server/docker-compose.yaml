@@ -12,7 +12,7 @@ services:
       - HASHED_PASSWORD= #optional
       - SUDO_PASSWORD=password #optional
       - SUDO_PASSWORD_HASH= #optional
-      - PROXY_DOMAIN=code-server.jimsgarage.co.uk #optional
+      - PROXY_DOMAIN=code-server.l0t.us #optional
       - DEFAULT_WORKSPACE=/config/workspace #optional
     volumes:
       - /home/ubuntu/docker/code-server/config:/config

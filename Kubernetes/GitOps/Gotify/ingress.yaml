@@ -4,18 +4,18 @@ kind: IngressRoute
 metadata:
   name: gotify
   namespace: gotify
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`www.gotify.jimsgarage.co.uk`) # change to your domain
+    - match: Host(`www.gotify.l0t.us`) # change to your domain
       kind: Rule
       services:
         - name: gotify
           port: 80
-    - match: Host(`gotify.jimsgarage.co.uk`) # change to your domain
+    - match: Host(`gotify.l0t.us`) # change to your domain
       kind: Rule
       services:
         - name: gotify

@@ -14,7 +14,7 @@ deployment:
   additionalContainers: []
   initContainers: []
 
-nodeSelector: 
+nodeSelector:
   worker: "true" # add these labels to your worker nodes before running - see video
 
 ports:
@@ -25,7 +25,7 @@ ports:
   websecure:
     tls:
       enabled: true
-      
+
 ingressRoute:
   dashboard:
     enabled: false

@@ -22,22 +22,22 @@ spec:
       nodeSelector:
         worker: "true"
       containers:
-      - name: gotify
-        image: gotify/server:latest
-        env:
-        - name: GOTIFY_DB_SQLITE
-          value: /app/data/gotify.db
-        - name: GOTIFY_PORT
-          value: "80"
-        ports:
-        - containerPort: 80
-        volumeMounts:
         - name: gotify
-          mountPath: /app/data
+          image: gotify/server:latest
+          env:
+            - name: GOTIFY_DB_SQLITE
+              value: /app/data/gotify.db
+            - name: GOTIFY_PORT
+              value: "80"
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: gotify
+              mountPath: /app/data
       volumes:
-      - name: gotify
-        persistentVolumeClaim:
-          claimName: gotify
+        - name: gotify
+          persistentVolumeClaim:
+            claimName: gotify
 ---
 apiVersion: v1
 kind: Service
@@ -51,10 +51,10 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 80
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
   selector:
     app: gotify
 ---

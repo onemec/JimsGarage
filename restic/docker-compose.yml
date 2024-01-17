@@ -11,7 +11,7 @@ services:
       RESTIC_REPOSITORY: /restic
       RESTIC_PASSWORD: MY_SUPER_LONG_PASSWORD
       RESTIC_BACKUP_SOURCES: /mnt/volumes
-      RESTIC_COMPRESSION: auto 
+      RESTIC_COMPRESSION: auto
       RESTIC_BACKUP_ARGS: >-
         --tag restic-proxmox #add tags, whatever you need to mark backups
         --verbose

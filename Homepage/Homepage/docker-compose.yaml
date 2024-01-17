@@ -16,18 +16,18 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.homepage.entrypoints=http"
-      - "traefik.http.routers.homepage.rule=Host(`homepage.jimsgarage.co.uk`)"
+      - "traefik.http.routers.homepage.rule=Host(`homepage.l0t.us`)"
       - "traefik.http.routers.homepage.middlewares=default-whitelist@file"
       - "traefik.http.middlewares.homepage-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.homepage.middlewares=homepage-https-redirect"
       - "traefik.http.routers.homepage-secure.entrypoints=https"
-      - "traefik.http.routers.homepage-secure.rule=Host(`homepage.jimsgarage.co.uk`)"
+      - "traefik.http.routers.homepage-secure.rule=Host(`homepage.l0t.us`)"
       - "traefik.http.routers.homepage-secure.tls=true"
       - "traefik.http.routers.homepage-secure.service=homepage"
       - "traefik.http.services.homepage.loadbalancer.server.port=3000"
-     # - "traefik.http.routers.homepage-secure.middlewares=default-whitelist@file" # uncomment if you want to use a Traefik whitelist to restrict access
-     # - "traefik.http.routers.homepage-secure.middlewares=authelia@docker" # uncomment if you want to use authelia
-     # - "traefik.docker.network=proxy"
+      # - "traefik.http.routers.homepage-secure.middlewares=default-whitelist@file" # uncomment if you want to use a Traefik whitelist to restrict access
+      # - "traefik.http.routers.homepage-secure.middlewares=authelia@docker" # uncomment if you want to use authelia
+      # - "traefik.docker.network=proxy"
     security_opt:
       - no-new-privileges:true
 

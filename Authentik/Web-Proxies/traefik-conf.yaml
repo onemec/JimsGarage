@@ -1,5 +1,5 @@
 http:
-  middlewares:    
+  middlewares:
     crowdsec-bouncer:
       forwardauth:
         address: http://bouncer-traefik:8080/api/v1/forwardAuth

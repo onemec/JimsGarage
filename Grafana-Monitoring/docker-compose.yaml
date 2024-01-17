@@ -31,17 +31,17 @@ services:
       - grafana-monitoring
       - proxy
     volumes:
-    - /home/ubuntu/docker/grafana-monitoring/grafana:/var/lib/grafana
+      - /home/ubuntu/docker/grafana-monitoring/grafana:/var/lib/grafana
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.grafana.entrypoints=http"
-      - "traefik.http.routers.grafana.rule=Host(`grafana.jimsgarage.co.uk`)"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.l0t.us`)"
       - "traefik.http.routers.grafana.middlewares=default-whitelist@file"
       - "traefik.http.middlewares.grafana-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.grafana.middlewares=grafana-https-redirect"
       - "traefik.http.routers.grafana-secure.entrypoints=https"
-      - "traefik.http.routers.grafana-secure.rule=Host(`grafana.jimsgarage.co.uk`)"
+      - "traefik.http.routers.grafana-secure.rule=Host(`grafana.l0t.us`)"
       - "traefik.http.routers.grafana-secure.tls=true"
       - "traefik.http.routers.grafana-secure.service=grafana"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
@@ -64,17 +64,17 @@ services:
     networks:
       - grafana-monitoring
     volumes:
-        - '/home/ubuntu/docker/grafana-monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro'
-        - '/:/hostfs:ro' # to monitor docker-vm
-        - '/var/run/docker.sock:/var/run/docker.sock' # to monitor docker containers
-        - '/home/ubuntu/docker/grafana-monitoring/telegraf/mibs:/usr/share/snmp/mibs' # mibs files [e.g., sophos]
+      - "/home/ubuntu/docker/grafana-monitoring/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro"
+      - "/:/hostfs:ro" # to monitor docker-vm
+      - "/var/run/docker.sock:/var/run/docker.sock" # to monitor docker containers
+      - "/home/ubuntu/docker/grafana-monitoring/telegraf/mibs:/usr/share/snmp/mibs" # mibs files [e.g., sophos]
     environment:
-        - HOST_ETC=/hostfs/etc
-        - HOST_PROC=/hostfs/proc
-        - HOST_SYS=/hostfs/sys
-        - HOST_VAR=/hostfs/var
-        - HOST_RUN=/hostfs/run
-        - HOST_MOUNT_PREFIX=/hostfs
+      - HOST_ETC=/hostfs/etc
+      - HOST_PROC=/hostfs/proc
+      - HOST_SYS=/hostfs/sys
+      - HOST_VAR=/hostfs/var
+      - HOST_RUN=/hostfs/run
+      - HOST_MOUNT_PREFIX=/hostfs
     image: telegraf:latest
   graphite:
     image: graphiteapp/graphite-statsd

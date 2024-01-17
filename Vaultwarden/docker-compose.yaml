@@ -5,7 +5,7 @@ services:
     container_name: vaultwarden
     image: vaultwarden/server:latest
     volumes:
-      - '/home/ubuntu/docker/vaultwarden/:/data/'
+      - "/home/ubuntu/docker/vaultwarden/:/data/"
     restart: unless-stopped
     networks:
       proxy:

@@ -7,6 +7,6 @@ spec:
   externalName: 192.168.200.75
   type: ExternalName
   ports:
-  - name: websecure
-    port: 8006
-    targetPort: 8006
+    - name: websecure
+      port: 8006
+      targetPort: 8006
